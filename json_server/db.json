@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "name": "Javascript Nâng Cao",
+      "description": "JavaScript Nâng Cao là một phần của ngôn ngữ lập trình JavaScript, chứa các khái niệm và kỹ thuật tiên tiến giúp nhà phát triển xây dựng các ứng dụng web phức tạp. Bao gồm việc sử dụng khái niệm bất đồng bộ (asynchronous), Promise, async/await, module, generator, điều khiển luồng, phân tích cú pháp và quản lý lỗi. JavaScript Nâng Cao mở ra nhiều cơ hội để tạo ra các ứng dụng web mạnh mẽ, linh hoạt và tương tác.",
+      "id": 1
+    },
+    {
+      "name": "Javascript Cơ Bản",
+      "description": "JavaScript là một ngôn ngữ lập trình phổ biến và mạnh mẽ, thường được sử dụng để phát triển các ứng dụng web tương tác. Với cú pháp dễ hiểu và tính linh hoạt cao, JavaScript cho phép các nhà phát triển tạo ra các trang web động, xử lý sự kiện và tương tác với người dùng. Nó hỗ trợ cả phía máy khách (client-side) và phía máy chủ (server-side) và được sử dụng rộng rãi trong các dự án phát triển web hiện đại.",
+      "id": 2
+    }
+  ]
+}

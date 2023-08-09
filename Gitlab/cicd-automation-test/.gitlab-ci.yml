@@ -1,0 +1,67 @@
+image: docker/compose:1.29.2
+
+services:
+    - docker:dind
+
+stages:
+    - build
+    - test
+    - release
+
+before_script:
+    - docker version
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+build:
+    stage: build
+    # only:
+    #     changes:
+    #         - Dockerfile
+    #         - src/*
+    #         - test/*
+    #         - package.json
+    script:
+        - docker pull $CI_REGISTRY_IMAGE:latest || true
+        - docker build --cache-from $CI_REGISTRY_IMAGE:latest --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
+        - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+
+test:
+    stage: test
+    before_script:
+        - docker-compose version
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
+    script:
+        - docker-compose up -d
+        - sleep 15
+        - docker-compose exec -T app npm run test
+    coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+    artifacts:
+        paths:
+            - coverage/
+
+release-tag:
+    variables:
+        GIT_STRATEGY: none
+    stage: release
+    except:
+        - master
+    script:
+        - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+        - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+release-latest:
+    variables:
+        GIT_STRATEGY: none
+    stage: release
+    only:
+        - master
+    script:
+        - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
+        - docker push $CI_REGISTRY_IMAGE:latest
+    release:
+        tag_name: v1.0.0-android
+        description: 'Android release v1.0.0'
