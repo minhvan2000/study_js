@@ -1,0 +1,649 @@
+[
+    {
+        "type": "type",
+        "description": [
+            { "id": 8, "name": "C", "alias": "%s" },
+            { "id": 8, "name": "U", "alias": "%lu" },
+            { "id": 8, "name": "S", "alias": "%ld" },
+            { "id": 32, "name": "F", "alias": "%f" },
+            { "id": 64, "name": "D", "alias": "%lf" },
+            { "id": 4, "name": "H", "alias": "0x%s" },
+            { "id": 1, "name": "b", "alias": "%lu" }
+        ]
+    },
+    {
+        "type": "app",
+        "description": [
+            { "id": 0, "name": "GENERAL" },
+            { "id": 1, "name": "GEO" },
+            { "id": 2, "name": "LYRECO" },
+            { "id": 3, "name": "ORANGE" },
+            { "id": 4, "name": "TRASH" },
+            { "id": 5, "name": "ACCO2" },
+            { "id": 6, "name": "FENCE" },
+            { "id": 7, "name": "GSO-BEA" },
+            { "id": 8, "name": "TILT-METER" },
+            { "id": 9, "name": "LTE" },
+            { "id": 10, "name": "BLE Mesh" },
+            { "id": 11, "name": "DQS" }
+        ]
+    },
+    {
+        "type": "frametype",
+        "description": [
+            { "id": 0, "name": "Information" },
+            { "id": 1, "name": "Reference Value" },
+            { "id": 2, "name": "Keep Alive" },
+            { "id": 3, "name": "User Frame" },
+            { "id": 4, "name": "Alarm" },
+            { "id": 5, "name": "Check Error" },
+            { "id": 6, "name": "Result Test" },
+            { "id": 7, "name": "Alarm Motion" },
+            { "id": 8, "name": "Uplink Daily" },
+            { "id": 9, "name": "HMI Trigger" },
+            { "id": 10, "name": "Alarm Relay" },
+            { "id": 11, "name": "Alarm Relay Network" },
+            { "id": 12, "name": "Alarm FW Update" },
+            { "id": 13, "name": "Alarm Supply" }
+        ]
+    },
+    {
+        "type": "device",
+        "description": [
+            { "id": 0, "name": "System", "alias": "SYS" },
+            { "id": 1, "name": "GPS", "alias": "GPS" },
+            { "id": 2, "name": "Accelerometer", "alias": "ACL" },
+            { "id": 3, "name": "Memory", "alias": "MEM" },
+            { "id": 4, "name": "LoRaWan", "alias": "LOR" },
+            { "id": 5, "name": "Battery", "alias": "BAT" },
+            { "id": 6, "name": "Distance", "alias": "DIS" },
+            { "id": 7, "name": "NFC", "alias": "NFC" },
+            { "id": 8, "name": "AirEnvironment", "alias": "AIR" },
+            { "id": 9, "name": "BLE", "alias": "BLE" },
+            { "id": 10, "name": "Temperature", "alias": "TEM" },
+            { "id": 11, "name": "LTE", "alias": "LTE" },
+            { "id": 12, "name": "Schedule", "alias": "SCH" },
+            { "id": 13, "name": "MagSensor", "alias": "MAG" },
+            { "id": 14, "name": "FlowSensor", "alias": "FLW" },
+            { "id": 15, "name": "BLE-Mesh", "alias": "BLM" },
+            { "id": 16, "name": "Light", "alias": "LGT" },
+            { "id": 101, "name": "Serial", "alias": "SER" },
+            { "id": 253, "name": "Led", "alias": "LED" },
+            { "id": 254, "name": "Button", "alias": "BUT" }
+        ]
+    },
+    {
+        "type": "mode",
+        "description": [
+            { "id": 0, "name": "Read" },
+            { "id": 0, "name": "Message" },
+            { "id": 1, "name": "Write" },
+            { "id": 1, "name": "Request" },
+            { "id": 2, "name": "ACK" },
+            { "id": 3, "name": "Response" }
+        ]
+    },
+    {
+        "type": "ALL",
+        "description": [
+            { "id": 0, "name": "Frame Error" },
+            { "id": 63, "name": "Error" }
+        ]
+    },
+    {
+        "type": "System",
+        "description": [
+            { "id": 0, "name": "Information" },
+            { "id": 1, "name": "KeepAlive Periodic" },
+            { "id": 2, "name": "Area Operation" },
+            { "id": 3, "name": "Profile Using" },
+            { "id": 4, "name": "Codec" },
+            { "id": 5, "name": "Time" },
+            { "id": 6, "name": "Shutdown" },
+            { "id": 7, "name": "Edit Profile" },
+            { "id": 8, "name": "Profile" },
+            { "id": 9, "name": "Reset Factory" },
+            { "id": 10, "name": "Keep Alive Data" },
+            { "id": 11, "name": "Instant Measurement" },
+            { "id": 12, "name": "Re-Join LoRa" },
+            { "id": 13, "name": "Reference Data" },
+            { "id": 14, "name": "Goto Stock Mode" },
+            { "id": 15, "name": "Reset Parameters" },
+            { "id": 16, "name": "Alarm Mask" },
+            { "id": 17, "name": "Rejoin Periodic" },
+            { "id": 18, "name": "Active Product" },
+            { "id": 19, "name": "Avoid Passive Periodic" },
+            { "id": 20, "name": "Valid Product" },
+            { "id": 21, "name": "Log Event" },
+            { "id": 22, "name": "Reset Device" },
+            { "id": 23, "name": "Reset Log Event" },
+            { "id": 24, "name": "SysData" },
+            { "id": 25, "name": "Measure Period" },
+            { "id": 26, "name": "Alarm Threshold" },
+            { "id": 27, "name": "Relay Control" },
+            { "id": 28, "name": "Power Off Alert" },
+            { "id": 29, "name": "Force Measure" },
+            { "id": 30, "name": "Control Source" },
+            { "id": 31, "name": "Reset Module" },
+            { "id": 32, "name": "Update_FW" },
+            { "id": 33, "name": "Update Progress" },
+            { "id": 35, "name": "Reset Infor" }
+        ]
+    },
+    {
+        "type": "GPS",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" }
+        ]
+    },
+    {
+        "type": "Accelerometer",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" }
+        ]
+    },
+    {
+        "type": "Memory",
+        "description": []
+    },
+    {
+        "type": "LoRaWan",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" },
+            { "id": 4, "name": "Dual Config" },
+            { "id": 6, "name": "Change DevEUI" }
+        ]
+    },
+    {
+        "type": "Battery",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" },
+            { "id": 4, "name": "Battery Debug" }
+        ]
+    },
+    {
+        "type": "Distance",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" }
+        ]
+    },
+    {
+        "type": "BLE",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" },
+            { "id": 3, "name": "Disable" }
+        ]
+    },
+    {
+        "type": "Temperature",
+        "description": [{ "id": 1, "name": "Data" }]
+    },
+    {
+        "type": "LTE",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 5, "name": "Direct Data" },
+            { "id": 6, "name": "Test Mode" },
+            { "id": 7, "name": "Mqtt Setting" },
+            { "id": 9, "name": "Change Connect" },
+            { "id": 10, "name": "Operator Status" },
+            { "id": 11, "name": "Mqtt KeepAlive Interval" },
+            { "id": 12, "name": "SSL Key URL" },
+            { "id": 13, "name": "Mqtt SSL" },
+            { "id": 14, "name": "Module Version" },
+            { "id": 15, "name": "Set Endpoint" },
+            { "id": 17, "name": "Active Profile" },
+            { "id": 18, "name": "Read Profile" },
+            { "id": 19, "name": "Read All Profiles" },
+            { "id": 20, "name": "DFOTA" },
+            { "id": 21, "name": "DFOTA Result" },
+            { "id": 31, "name": "Reset" }
+        ]
+    },
+    {
+        "type": "Schedule",
+        "description": [
+            { "id": 1, "name": "Delete Activity" },
+            { "id": 2, "name": "Setting" }
+        ]
+    },
+    {
+        "type": "MagSensor",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" }
+        ]
+    },
+    {
+        "type": "FlowSensor",
+        "description": [
+            { "id": 1, "name": "Data" },
+            { "id": 2, "name": "Setting" }
+        ]
+    },
+    {
+        "type": "BLE-Mesh",
+        "description": [{ "id": 1, "name": "Data" }]
+    },
+    {
+        "type": "Light",
+        "description": [
+            { "id": 7, "name": "Dimmer" },
+            { "id": 9, "name": "Turning" }
+        ]
+    },
+    {
+        "type": "Serial",
+        "description": [{ "id": 2, "name": "Setting" }]
+    },
+    {
+        "type": "Button",
+        "description": [{ "id": 2, "name": "Setting" }]
+    },
+    {
+        "type": "frame error",
+        "description": [{ "id": 255, "name": "Invalid" }]
+    },
+    {
+        "type": "error",
+        "description": [
+            { "id": 1, "name": "DEV" },
+            { "id": 2, "name": "DRI" },
+            { "id": 4, "name": "COM" },
+            { "id": 8, "name": "TIM" },
+            { "id": 16, "name": "SEN" },
+            { "id": 32, "name": "MEM" },
+            { "id": 64, "name": "MEA" },
+            { "id": 128, "name": "REV" }
+        ]
+    },
+    {
+        "type": "area",
+        "description": [
+            { "id": 0, "name": "Stock" },
+            { "id": 1, "name": "Unknown" },
+            { "id": 2, "name": "Define" },
+            { "id": 3, "name": "Test" },
+            { "id": 4, "name": "USER_0" },
+            { "id": 5, "name": "USER_1" }
+        ]
+    },
+    {
+        "type": "frequency",
+        "description": [
+            { "id": 0, "name": "Oneshot" },
+            { "id": 1, "name": "Secondly" },
+            { "id": 2, "name": "Minutely" },
+            { "id": 3, "name": "Hourly" },
+            { "id": 4, "name": "Daily" },
+            { "id": 5, "name": "Weekly" },
+            { "id": 6, "name": "Monthly" },
+            { "id": 7, "name": "Yearly" }
+        ]
+    },
+    {
+        "type": "codec",
+        "description": [
+            { "id": 0, "name": "None" },
+            { "id": 1, "name": "CayenneLPP" },
+            { "id": 2, "name": "OrangePE" },
+            { "id": 3, "name": "Default" }
+        ]
+    },
+    {
+        "type": "filter",
+        "description": [
+            { "id": 1, "name": "Kalman" },
+            { "id": 2, "name": "Kalman & Average" },
+            { "id": 3, "name": "Average" }
+        ]
+    },
+    {
+        "type": "DevEUI Type",
+        "description": [
+            { "id": 0, "name": "MCU" },
+            { "id": 1, "name": "Supplier" },
+            { "id": 2, "name": "UserDefined" },
+            { "id": 3, "name": "EEPROM" }
+        ]
+    },
+    {
+        "type": "yesno",
+        "description": [
+            { "id": 0, "name": "No" },
+            { "id": 1, "name": "Yes" }
+        ]
+    },
+    {
+        "type": "network",
+        "description": [
+            { "id": 1, "name": "IFAC" },
+            { "id": 2, "name": "WAN" }
+        ]
+    },
+    {
+        "type": "rtc updated",
+        "description": [
+            { "id": 0, "name": "Empty" },
+            { "id": 1, "name": "By Setting" },
+            { "id": 2, "name": "By GPS" },
+            { "id": 3, "name": "By Last Event" },
+            { "id": 4, "name": "By LTE" }
+        ]
+    },
+    {
+        "type": "reference",
+        "description": [
+            { "id": 1, "name": "Read" },
+            { "id": 2, "name": "Take" }
+        ]
+    },
+    {
+        "type": "event option",
+        "description": [
+            { "id": 1, "name": "Read All" },
+            { "id": 2, "name": "By Time" },
+            { "id": 3, "name": "By Last Day" },
+            { "id": 4, "name": "By Event Type" }
+        ]
+    },
+    {
+        "type": "event type",
+        "description": [
+            { "id": 1, "name": "STARTUP" },
+            { "id": 2, "name": "CHANGE_PROFILE" },
+            { "id": 3, "name": "PROCESS_TASK" },
+            { "id": 4, "name": "ACTIVATE" },
+            { "id": 5, "name": "DEACTIVATE" },
+            { "id": 6, "name": "MEASURE" },
+            { "id": 7, "name": "SETTING" },
+            { "id": 8, "name": "CONTROL" },
+            { "id": 9, "name": "HMI" },
+            { "id": 10, "name": "CONNECT" },
+            { "id": 11, "name": "DISCONNECT" },
+            { "id": 12, "name": "COMMUNICATE" },
+            { "id": 13, "name": "ALARM" },
+            { "id": 14, "name": "ACKNOWLEDGE" }
+        ]
+    },
+    {
+        "type": "event fail",
+        "description": [
+            { "id": 0, "name": "No event yet" },
+            { "id": 255, "name": "Radio not allowed" }
+        ]
+    },
+    {
+        "type": "distance mode",
+        "description": [
+            { "id": 1, "name": "Average" },
+            { "id": 2, "name": "Average Plus" }
+        ]
+    },
+    {
+        "type": "onoff",
+        "description": [
+            { "id": 0, "name": "OFF" },
+            { "id": 1, "name": "ON" }
+        ]
+    },
+    {
+        "type": "day of week",
+        "description": [
+            { "id": 0, "name": "Sunday" },
+            { "id": 1, "name": "Monday" },
+            { "id": 2, "name": "Tuesday" },
+            { "id": 3, "name": "Wednesday" },
+            { "id": 4, "name": "Thursday" },
+            { "id": 5, "name": "Friday" },
+            { "id": 6, "name": "Saturday" },
+            { "id": 255, "name": "Everyday" }
+        ]
+    },
+    {
+        "type": "action",
+        "description": [
+            { "id": 0, "name": "Relay OFF" },
+            { "id": 1, "name": "Relay On" }
+        ]
+    },
+    {
+        "type": "reset source",
+        "description": [
+            { "id": 0, "name": " " },
+            { "id": 1, "name": "Button" },
+            { "id": 2, "name": "Command" },
+            { "id": 3, "name": "Schedule" },
+            { "id": 4, "name": "Assert" },
+            { "id": 5, "name": "Subscribe fail" },
+            { "id": 6, "name": "Connecter" }
+        ]
+    },
+    {
+        "type": "reset type",
+        "description": [
+            { "id": 0, "name": "Power On" },
+            { "id": 1, "name": "Lost Connection Network" },
+            { "id": 2, "name": "Reset LTE" },
+            { "id": 4, "name": "Reset Device" },
+            { "id": 8, "name": "Reset Factory" },
+            { "id": 16, "name": "Reset Update FW" },
+            { "id": 32, "name": "Reset Mqtt by peer" },
+            { "id": 64, "name": "Reset Mqtt ping fail" },
+            { "id": 128, "name": "Connection is closed" },
+            { "id": 256, "name": "" },
+            { "id": 512, "name": "" },
+            { "id": 1024, "name": "" },
+            { "id": 2048, "name": "" }
+        ]
+    },
+    {
+        "type": "mqtt server",
+        "description": [
+            { "id": 0, "name": "Ifactory" },
+            { "id": 1, "name": "Orange" }
+        ]
+    },
+    {
+        "type": "openclose",
+        "description": [
+            { "id": 0, "name": "Close" },
+            { "id": 1, "name": "Open" }
+        ]
+    },
+    {
+        "type": "status",
+        "description": [
+            { "id": 0, "name": "OK" },
+            { "id": 1, "name": "Write Success" },
+            { "id": 2, "name": "Download File Fail" },
+            { "id": 3, "name": "Read File Fail" },
+            { "id": 4, "name": "Bad File" },
+            { "id": 5, "name": "Write File Fail" },
+            { "id": 255, "name": "Unknown Fail" }
+        ]
+    },
+    {
+        "type": "lteop name format",
+        "description": [
+            { "id": 0, "name": "long alphanumeric" },
+            { "id": 1, "name": "short alphanumeric" },
+            { "id": 2, "name": "numeric" }
+        ]
+    },
+    {
+        "type": "array status",
+        "description": [
+            { "id": 0, "name": "success" },
+            { "id": 1, "name": "empty" },
+            { "id": 255, "name": "fail" }
+        ]
+    },
+    {
+        "type": "typePowerOn",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Power On, " }
+        ]
+    },
+    {
+        "type": "typeCmdResetDevice",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Cmd Reset Device, " }
+        ]
+    },
+    {
+        "type": "typeCmdResetLTE",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Cmd Reset LTE, " }
+        ]
+    },
+    {
+        "type": "typeButtonResetMqtt",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Button Reset Mqtt, " }
+        ]
+    },
+    {
+        "type": "typeButtonResetFactory",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Button Reset Factory, " }
+        ]
+    },
+    {
+        "type": "typeButtonResetDevice",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Button Reset Device, " }
+        ]
+    },
+    {
+        "type": "typeButtonResetLTE",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Button Reset LTE, " }
+        ]
+    },
+    {
+        "type": "typeResetUpgrade",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Reset Upgrade, " }
+        ]
+    },
+    {
+        "type": "typeMqttResetByPeer",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Mqtt Reset By Peer, " }
+        ]
+    },
+    {
+        "type": "typeMqttPingTimeout",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Mqtt Ping Timeout, " }
+        ]
+    },
+    {
+        "type": "typeResetController",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Reset Controller, " }
+        ]
+    },
+    {
+        "type": "typeLostNetwork",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Lost Network, " }
+        ]
+    },
+    {
+        "type": "typeMqttCheck",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Mqtt Check, " }
+        ]
+    },
+    {
+        "type": "typeCmdResetFactory",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Cmd Reset Factory, " }
+        ]
+    },
+    {
+        "type": "typeMQTTSendingCONNECTFail",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "MQTT Sending CONNECT Fail, " }
+        ]
+    },
+    {
+        "type": "typeReceiveCONACKFail",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "MQTT Receiving CONNACK timeout, " }
+        ]
+    },
+    {
+        "type": "typeServerIsInitiativeToClose",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Server Is Initiative To Close, " }
+        ]
+    },
+    {
+        "type": "typePacketSendingFailure",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "MQTT Packet Sending Failure, " }
+        ]
+    },
+    {
+        "type": "typeMQTTLink",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Link or server is unavailable, " }
+        ]
+    },
+    {
+        "type": "typeHardFault",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Hard Fault, " }
+        ]
+    },
+    {
+        "type": "typeSubscribe",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Subscribe fail" }
+        ]
+    },
+    {
+        "type": "typeModuleSuccess",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Update Module Success, " }
+        ]
+    },
+    {
+        "type": "typeModuleFailed",
+        "description": [
+            { "id": 0, "name": "" },
+            { "id": 1, "name": "Update Module Failed, " }
+        ]
+    }
+]

@@ -1,0 +1,1629 @@
+[
+	{
+		"app": "GENERAL",
+		"device": "ALL",
+		"cmd": "Frame Error",
+		"infor": [
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Status", "access": ["Response"], "attribute": [{"type": "U", "size": 1, "enum": "frame error"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "ALL",
+		"cmd": "Error",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Status", "access": ["Message"], "attribute": [{"type": "U", "size": 1, "enum": "error"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Information",
+		"infor": [
+			{"mode": "Message", "length":19}
+		],
+		"description": [
+			{"parameter": "Dev EUI", "access": ["Message"], "attribute": [{"type": "H", "size": 16}] },
+			{"parameter": "Firmware VER", "access": ["Message"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] },
+			{"parameter": "Hardware VER", "access": ["Message"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] },
+			{"parameter": "MCUEUI", "access": ["Message"], "attribute": [{"type": "H", "size": 16}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LoRaWan",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":8}
+		],
+		"description": [
+			{"parameter": "NetID", "access": ["Message"], "format": "0x%06X", "attribute": [{"type": "b", "size": 24}] },
+			{"parameter": "AppNonce", "access": ["Message"], "format": "0x%06X", "attribute": [{"type": "b", "size": 24}] },
+			{"parameter": "DevNonce", "access": ["Message"], "format": "0x%04X", "attribute": [{"type": "b", "size": 16}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "SysData",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "RTC Updated", "access": ["Message"], "attribute": [{"type": "U", "size": 1, "enum": "rtc updated"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Alarm Mask",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Motion Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "LowBattery Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 5}] }
+		]
+	}
+	,
+	{
+		"app": "FENCE",
+		"device": "System",
+		"cmd": "Alarm Mask",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "GeoFencing Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Motion Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "LowBattery Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "HighVoltage Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "HighVoltage Unstable", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "HighVoltage LowValue", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "TILT-METER",
+		"device": "System",
+		"cmd": "Alarm Mask",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Reserve", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Shock Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] },
+			{"parameter": "Angle Detected", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 3}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Information",
+		"infor": [
+			{"mode": "Message", "length":7}
+		],
+		"description": [
+			{"parameter": "Firmware VER", "access": ["Message"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] },
+			{"parameter": "Hardware VER", "access": ["Message"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] },
+			{"parameter": "Restart", "access": ["Message"], "format": "%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s", "attribute": 
+			[{"type": "b", "size": 1, "enum": "typePowerOn"}, 
+			 {"type": "b", "size": 1, "enum": "typeCmdResetDevice"}, 
+			 {"type": "b", "size": 1, "enum": "typeCmdResetLTE"}, 
+			 {"type": "b", "size": 1, "enum": "typeButtonResetMqtt"}, 
+			 {"type": "b", "size": 1, "enum": "typeButtonResetFactory"}, 
+			 {"type": "b", "size": 1, "enum": "typeButtonResetDevice"}, 
+			 {"type": "b", "size": 1, "enum": "typeButtonResetLTE"}, 
+			 {"type": "b", "size": 1, "enum": "typeResetUpgrade"},
+			 {"type": "b", "size": 1, "enum": "typeMqttResetByPeer"}, 
+			 {"type": "b", "size": 1, "enum": "typeMqttPingTimeout"}, 
+			 {"type": "b", "size": 1, "enum": "typeResetController"}, 
+			 {"type": "b", "size": 1, "enum": "typeLostNetwork"}, 
+			 {"type": "b", "size": 1, "enum": "typeMqttCheck"}, 
+			 {"type": "b", "size": 1, "enum": "typeCmdResetFactory"},
+			 {"type": "b", "size": 1, "enum": "typeMQTTSendingCONNECTFail"},
+			 {"type": "b", "size": 1, "enum": "typeReceiveCONACKFail"},
+			 {"type": "b", "size": 1, "enum": "typeServerIsInitiativeToClose"},
+			 {"type": "b", "size": 1, "enum": "typePacketSendingFailure"},
+			 {"type": "b", "size": 1, "enum": "typeMQTTLink"}, 
+			 {"type": "b", "size": 1, "enum": "typeSubscribe"}, 
+			 {"type": "b", "size": 1, "enum": "typeHardFault"}, 
+			 {"type": "b", "size": 1, "enum": "typeModuleSuccess"},
+			 {"type": "b", "size": 1, "enum": "typeModuleFailed"}] },
+			 {"parameter": "Reserve", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 10}] }
+		]
+	  }
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Power Off Alert",
+		"infor": [
+			{"mode": "Message", "length":16}
+		],
+		"description": [
+			{"parameter": "Power off possible at", "access": ["Message"], "attribute": [{"type": "U", "size": 8}] },
+			{"parameter": "Power on at", "access": ["Message"], "attribute": [{"type": "U", "size": 8}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Control Source",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Source", "access": ["Message"], "formular": "%s", "attribute": [{"type": "U", "size": 1, "enum": "reset source"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Update Progress",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Percent", "access": ["Message"], "formular": "%d", "attribute": [{"type": "U", "size": 1, "range": [1,100]}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reset Infor",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Reset Infor", "access": ["Message"], "format": "%s%s", "attribute": [{"type": "b", "size": 4, "enum": "reset source"}, {"type": "b", "size": 4, "enum": "reset type"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "KeepAlive Periodic",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":7},
+			{"mode": "Response", "length":7}
+		],
+		"description": [
+			{"parameter": "Area", "access": ["Read", "Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "area"}] },
+			{"parameter": "Frequency", "access": ["Write", "Response"], "format": "%s: %u - %s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}, {"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Area Operation",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":12},
+			{"mode": "Response", "length":12}
+		],
+		"description": [
+			{"parameter": "Latitude", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 4}] },
+			{"parameter": "Longtitude", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 4}] },
+			{"parameter": "Range", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 4}] }
+		]
+	}
+	,
+	{
+		"app": "FENCE",
+		"device": "System",
+		"cmd": "Area Operation",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":13},
+			{"mode": "Response", "length":13}
+		],
+		"description": [
+			{"parameter": "Profile", "access": ["Read", "Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "area"}] },
+			{"parameter": "Latitude", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 4}] },
+			{"parameter": "Longtitude", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 4}] },
+			{"parameter": "Range (m)", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 31}] },
+			{"parameter": "Activate Geo-Fencing", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Profile Using",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Profile", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "area"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Codec",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Codec", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "codec"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Time",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":8},
+			{"mode": "Response", "length":8},
+			{"mode": "Message", "length":8}
+		],
+		"description": [
+			{"parameter": "Unix timestamp", "access": ["Message", "Write", "Response"], "attribute": [{"type": "U", "size": 8}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Shutdown",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Profile",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":11},
+			{"mode": "Response", "length":11}
+		],
+		"description": [
+			{"parameter": "Area", "access": ["Read", "Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "area", "range": [0,5]}] },
+			{"parameter": "Keep Alive periodly", "access": ["Write", "Response"], "format": "%s: %u - %s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}, {"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] },
+			{"parameter": "Alarm periodly", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] },
+			{"parameter": "Alarm Retry", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "ACCO2",
+		"device": "System",
+		"cmd": "Profile",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":15},
+			{"mode": "Response", "length":15}
+		],
+		"description": [
+			{"parameter": "Area", "access": ["Read", "Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "area"}] },
+			{"parameter": "Uplink KA Frequency", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] },
+			{"parameter": "Measurement Frequency", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] },
+			{"parameter": "Uplink daily at time", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 8, "option": ["timestamp"]}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reset Factory",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Keep Alive Data",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":3},
+			{"mode": "Response", "length":3}
+		],
+		"description": [
+			{"parameter": "Profile", "access": ["Read", "Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "area"}] },
+			{"parameter": "reserved", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "GPS Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "ACCL Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Battery Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Distance Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "NFC Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "CO2 Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "BLE Data Masking", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 6}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Instant Measurement",
+		"infor": [
+			{"mode": "Request", "length":2}
+		],
+		"description": [
+			{"parameter": "Enable save as Data Ref", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "GPS Data Masking", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "ACCL Data Masking", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Battery Data Masking", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Distance Data Masking", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "NFC Data Masking", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "CO2 Data Masking", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 7}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Re-Join LoRa",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reference Data",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Enable save as Data Ref", "access": ["Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "GPS measuament", "access": ["Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "ACL measuament", "access": ["Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Battery measuament", "access": ["Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Distance measuament", "access": ["Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserved", "access": ["Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 3}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Goto Stock Mode",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reset Parameters",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "FENCE",
+		"device": "System",
+		"cmd": "Alarm Mask",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "GeoFencing Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Motion Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "LowBattery Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "HighVoltage Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Unstable Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "LowValue Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Rejoin Periodic",
+		"infor": [
+			{"mode": "Request", "length":3}
+		],
+		"description": [
+			{"parameter": "Rejoin periodly", "access": ["Request"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Active Product",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "Activate flag", "access": ["Request"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Avoid Passive Periodic",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":3},
+			{"mode": "Response", "length":3}
+		],
+		"description": [
+			{"parameter": "Passive Battery periodly", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Valid Product",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "Validate flag", "access": ["Request"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Log Event",
+		"infor": [
+			{"mode": "Read", "length":1}
+		],
+		"description": [
+			{"parameter": "Option", "access": ["Read"], "attribute": [{"type": "U", "size": 1, "enum": "event option"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Log Event",
+		"infor": [
+			{"mode": "Read", "length":6}
+		],
+		"description": [
+			{"parameter": "Option", "access": ["Read"], "attribute": [{"type": "U", "size": 1, "enum": "event option"}] },
+			{"parameter": "Number of Day", "access": ["Read"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Start Date", "access": ["Read"], "attribute": [{"type": "U", "size": 4, "option": ["timestamp"]}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Log Event",
+		"infor": [
+			{"mode": "Read", "length":2}
+		],
+		"description": [
+			{"parameter": "Option", "access": ["Read"], "attribute": [{"type": "U", "size": 1, "enum": "event option"}] },
+			{"parameter": "Event Type", "access": ["Read"], "attribute": [{"type": "U", "size": 1, "enum": "event type"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Log Event",
+		"infor": [
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Option", "access": ["Response"], "attribute": [{"type": "U", "size": 1, "enum": "event option"}] },
+			{"parameter": "Fail", "access": ["Response"], "attribute": [{"type": "U", "size": 1, "enum": "event fail"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Log Event",
+		"infor": [
+			{"mode": "Response", "length":6}
+		],
+		"option": ["event"],
+		"description": [
+			{"parameter": "Option", "access": ["Response"], "attribute": [{"type": "U", "size": 1, "enum": "event option"}] },
+			{"parameter": "Count", "access": ["Response"], "attribute": [{"type": "U", "size": 4}] },
+			{"parameter": "Event", "access": ["Response"], "option": ["event"], "format": "{%s}", "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reset Device",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "Minutes", "access": ["Request"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reset Log Event",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "TILT-METER",
+		"device": "System",
+		"cmd": "Alarm Mask",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":11},
+			{"mode": "Response", "length":11}
+		],
+		"description": [
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Shock Detect", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] },
+			{"parameter": "Angle Detect", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 3}] },
+			{"parameter": "Angle Threshold", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "range": [1,89]}] },
+			{"parameter": "Alarm Period", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] },
+			{"parameter": "Observation Period", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] },
+			{"parameter": "Accelerometer Sensibility", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "range": [1,127]}] },
+			{"parameter": "Retry Confirmed", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "TILT-METER",
+		"device": "System",
+		"cmd": "Alarm Mask",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "Reserve", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Shock Alert Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] },
+			{"parameter": "Angle Alert Acknowledge", "access": ["Request"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 3}] }
+		]
+	}
+	,
+	{
+		"app": "TILT-METER",
+		"device": "System",
+		"cmd": "Reference Data",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":6},
+			{"mode": "Response", "length":6}
+		],
+		"description": [
+			{"parameter": "Read/Take Reference", "access": ["Read"], "attribute": [{"type": "U", "size": 1, "enum": "reference"}] },
+			{"parameter": "X", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 2, "range": [-2048,2047]}] },
+			{"parameter": "Y", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 2, "range": [-2048,2047]}] },
+			{"parameter": "Z", "access": ["Write", "Response"], "attribute": [{"type": "S", "size": 2, "range": [-2048,2047]}] }
+		]
+	}
+	,
+	{
+		"app": "FENCE",
+		"device": "System",
+		"cmd": "Measure Period",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":5},
+			{"mode": "Response", "length":5}
+		],
+		"description": [
+			{"parameter": "Active", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "GPS", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "ACL", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "UNUSED", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] },
+			{"parameter": "BAT", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "DIS", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 9}] },
+			{"parameter": "Measure Period", "access": ["Write", "Response"], "format": "%s: %u", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "FENCE",
+		"device": "System",
+		"cmd": "Alarm Threshold",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":4},
+			{"mode": "Response", "length":4}
+		],
+		"description": [
+			{"parameter": "Battery Low Threshold (%)", "access": ["Write", "Response"], "format": "%.1f", "attribute": [{"type": "U", "size": 1, "formular": "a/2", "range": [0,200]}] },
+			{"parameter": "Supply 12V Low Threshold (V)", "access": ["Write", "Response"], "format": "%.1f", "attribute": [{"type": "U", "size": 1, "formular": "a/2", "range": [0,24]}] },
+			{"parameter": "High Voltage Stable Threshold (%)", "access": ["Write", "Response"], "format": "%.1f", "attribute": [{"type": "U", "size": 1, "formular": "a/2", "range": [0,200]}] },
+			{"parameter": "High Voltage Low Value Threshold (kV)", "access": ["Write", "Response"], "format": "%.1f", "attribute": [{"type": "U", "size": 1, "formular": "a/2", "range": [0,255]}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Relay Control",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1},
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Power", "access": ["Write", "Response", "Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1, "enum": "onoff"}] },
+			{"parameter": "Relay", "access": ["Write", "Response", "Message"], "attribute": [{"type": "b", "size": 1, "enum": "onoff"}] },
+			{"parameter": "reserved", "access": ["Write", "Response", "Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 6}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Force Measure",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Reset Module",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "Module name", "access": ["Request"], "attribute": [{"type": "U", "size": 1, "enum": "device"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Update_FW",
+		"infor": [
+			{"mode": "Request", "length":4},
+			{"mode": "Message", "length":1}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Status", "access": ["Message"], "attribute": [{"type": "U", "size": 1, "enum": "status"}] },
+			{"parameter": "Length", "access": ["Request"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Link", "access": ["Request"], "attribute": [{"type": "C", "size": 1}] },
+			{"parameter": "Firmware VER", "access": ["Request"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] },
+			{"parameter": "Reserve", "access": ["Request"], "option": ["ignore"], "attribute": [{"type": "b", "size": 4}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Information",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Get Information", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1, "enum": "yesno"}] },
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 7}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "System",
+		"cmd": "Information",
+		"infor": [
+			{"mode": "Message", "length":3},
+			{"mode": "Response", "length":3}
+		],
+		"description": [
+			{"parameter": "Firmware VER", "access": ["Message", "Response"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] },
+			{"parameter": "Hardware VER", "access": ["Message", "Response"], "format": "%u.%u.%u", "attribute": [{"type": "b", "size": 4}, {"type": "b", "size": 4}, {"type": "b", "size": 4}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "GPS",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":5},
+			{"mode": "Response", "length":5}
+		],
+		"description": [
+			{"parameter": "Timeout Connecting (s)", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 12}] },
+			{"parameter": "Number Sampling", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4}] },
+			{"parameter": "Retry Mesurement", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4}] },
+			{"parameter": "Filter Type", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4, "enum": "filter"}] },
+			{"parameter": "Timeout measurement (s)", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 12}] },
+			{"parameter": "Number Satelite", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "GPS",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":8}
+		],
+		"description": [
+			{"parameter": "Longitude", "access": ["Message"], "format": "%.06lf", "attribute": [{"type": "S", "size": 4, "formular": "a/1000000", "range": [-180,180], "error": "Invalid"}] },
+			{"parameter": "Latitude", "access": ["Message"], "format": "%.06lf", "attribute": [{"type": "S", "size": 4, "formular": "a/1000000", "range": [-90,90], "error": "Invalid"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Accelerometer",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Sensibility", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "range": [1,127]}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Accelerometer",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] },
+			{"parameter": "Movement", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 5}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Accelerometer",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":6}
+		],
+		"description": [
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 2}] },
+			{"parameter": "Movement Current", "access": ["Message"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserved", "access": ["Message"], "option": ["ignore"], "attribute": [{"type": "b", "size": 5}] },
+			{"parameter": "Movement Statistic", "access": ["Message"], "format": "[%d,%d,%d,%d,%d,%d,%d,%d]", "attribute": [{"type": "b", "size": 1}, {"type": "b", "size": 1}, {"type": "b", "size": 1}, {"type": "b", "size": 1}, {"type": "b", "size": 1}, {"type": "b", "size": 1}, {"type": "b", "size": 1}, {"type": "b", "size": 1}] },
+			{"parameter": "Movement Statistic Time", "access": ["Message"], "attribute": [{"type": "U", "size": 4, "option": ["timestamp"], "range": [1,4294967295], "error": "Time not yet updated by GPS"}] }
+		]
+	}
+	,
+	{
+		"app": "TILT-METER",
+		"device": "Accelerometer",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":7}
+		],
+		"description": [
+			{"parameter": "Angle", "access": ["Message"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "axis X", "access": ["Message"], "attribute": [{"type": "S", "size": 2}] },
+			{"parameter": "axis Y", "access": ["Message"], "attribute": [{"type": "S", "size": 2}] },
+			{"parameter": "axis Z", "access": ["Message"], "attribute": [{"type": "S", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LoRaWan",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":39},
+			{"mode": "Response", "length":39}
+		],
+		"description": [
+			{"parameter": "Select DevEUIFactory", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4, "enum": "DevEUI Type"}] },
+			{"parameter": "Select DevEUILoRaWan", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4, "enum": "DevEUI Type"}] },
+			{"parameter": "DevEUI", "access": ["Write", "Response"], "attribute": [{"type": "H", "size": 16}] },
+			{"parameter": "APPEUI", "access": ["Write", "Response"], "attribute": [{"type": "H", "size": 16}] },
+			{"parameter": "Enable Adaptive Data Rate", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Enable Duty Cycle", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 6}] },
+			{"parameter": "Antenna Gain", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "F", "size": 1}] },
+			{"parameter": "Timeout connection", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "ActiveDual_U8", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "DefaultNetwork_U8", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 2, "enum": "network"}] },
+			{"parameter": "ActiveAppnonce_U8", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "Rev", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 4}] },
+			{"parameter": "LinkCheckMax_U8", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "LinkCheckDualMax_U8", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Device address", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "U", "size": 4}] },
+			{"parameter": "NetID_B24", "access": ["Write", "Response"], "option": ["ignore"], "format": "0x%06X", "attribute": [{"type": "b", "size": 24}] },
+			{"parameter": "AppNonce_B24", "access": ["Write", "Response"], "option": ["ignore"], "format": "0x%06X", "attribute": [{"type": "b", "size": 24}] },
+			{"parameter": "DevNonce_B16", "access": ["Write", "Response"], "option": ["ignore"], "format": "0x%04X", "attribute": [{"type": "b", "size": 16}] }
+		]
+	}
+	,
+	{
+		"app": "GEO",
+		"device": "LoRaWan",
+		"cmd": "Dual Config",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":2},
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Active/Deactive", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1}] },
+			{"parameter": "reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 7}] },
+			{"parameter": "LinkCheckMax", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4}] },
+			{"parameter": "LinkCheckDualMax", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 4}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LoRaWan",
+		"cmd": "Change DevEUI",
+		"infor": [
+			{"mode": "Message", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Battery",
+		"cmd": "Battery Debug",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":15},
+			{"mode": "Response", "length":15}
+		],
+		"description": [
+			{"parameter": "WorkingDays", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "InDayConsume", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 4}] },
+			{"parameter": "LatestDayConsume", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 4}] },
+			{"parameter": "Remain", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 4}] },
+			{"parameter": "PowerUpCounter", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "LYRECO",
+		"device": "Battery",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":11},
+			{"mode": "Response", "length":11}
+		],
+		"description": [
+			{"parameter": "Coefficient_Mcu_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_Battery_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF12_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF11_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF10_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF9_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF8_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF7_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraRx_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_Sleep_uA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_Distance_uA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "TILT-METER",
+		"device": "Battery",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":11},
+			{"mode": "Response", "length":11}
+		],
+		"description": [
+			{"parameter": "Coefficient_Mcu_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_Battery_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_Acl_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF12_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF11_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF10_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF9_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF8_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraTxSF7_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_LoraRx_mA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Coefficient_Sleep_uA", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Battery",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":6}
+		],
+		"description": [
+			{"parameter": "Battery Voltage (V)", "access": ["Message"], "format": "%.03f", "attribute": [{"type": "U", "size": 2, "formular": "a/1000"}] },
+			{"parameter": "Battery Day Remain", "access": ["Message"], "attribute": [{"type": "U", "size": 2, "range": [0,65534], "error": "Updated On Next Day"}] },
+			{"parameter": "Battery Percent", "access": ["Message"], "format": "%.02f", "attribute": [{"type": "U", "size": 2, "formular": "a/100"}] }
+		]
+	}
+	,
+	{
+		"app": "FENCE",
+		"device": "Battery",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":12}
+		],
+		"description": [
+			{"parameter": "Battery Voltage (V)", "access": ["Message"], "format": "%.03f", "attribute": [{"type": "U", "size": 2, "formular": "a/1000"}] },
+			{"parameter": "Battery Day Remain", "access": ["Message"], "attribute": [{"type": "U", "size": 2, "range": [0,65534], "error": "Updated On Next Day"}] },
+			{"parameter": "Battery Percent", "access": ["Message"], "format": "%.02f", "attribute": [{"type": "U", "size": 2, "formular": "a/100"}] },
+			{"parameter": "Voltage Accumulator", "access": ["Message"], "format": "%.03f", "attribute": [{"type": "U", "size": 2, "formular": "a/1000"}] },
+			{"parameter": "High-Voltage (+kV)", "access": ["Message"], "format": "%.03f", "attribute": [{"type": "U", "size": 2, "formular": "a/1000"}] },
+			{"parameter": "High-Voltage (-kV)", "access": ["Message"], "format": "%.03f", "attribute": [{"type": "U", "size": 2, "formular": "a/1000"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Battery",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":2}
+		],
+		"description": [
+			{"parameter": "Battery Voltage (V)", "access": ["Message"], "format": "%.03f", "attribute": [{"type": "U", "size": 2, "formular": "a/1000"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Distance",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":2},
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Mode mesure", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "distance mode"}] },
+			{"parameter": "Number measure", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Distance",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":2}
+		],
+		"option": ["array"],
+		"description": [
+			{"parameter": "Distance (mm)", "access": ["Message"], "format": "%d", "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "BLE",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":15},
+			{"mode": "Response", "length":15}
+		],
+		"description": [
+			{"parameter": "Avertising Timeout (s)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Avertising Interval (ms)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Discovery Timeout (s)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Avertising Device Name", "access": ["Write", "Response"], "format": "%c%c%c%c%c%c%c%c%c%c", "attribute": [{"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "BLE",
+		"cmd": "Disable",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GSO-BEA",
+		"device": "BLE",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":7}
+		],
+		"option": ["array"],
+		"description": [
+			{"parameter": "Report Data", "access": ["Message"], "format": "{\"Address\": \"%s\", \"Adv Data\": \"Ignored\", \"RSSI\": %ld}", "attribute": [{"type": "H", "size": 12}, {"type": "S", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GSO-BEA",
+		"device": "BLE",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":15}
+		],
+		"option": ["array"],
+		"description": [
+			{"parameter": "Report Data", "access": ["Message"], "format": "{\"Address\": \"%s\", \"RSSI\": %ld, \"Adv Length\": %d, \"Adv Data\": {\"Battery\": %d, \"In Region\": %d, \"EnterCnt\": %d}}", "attribute": [{"type": "H", "size": 12}, {"type": "S", "size": 1}, {"type": "U", "size": 1}, {"type": "U", "size": 2}, {"type": "U", "size": 1}, {"type": "U", "size": 4}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "BLE",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Num of BLE Device", "access": ["Message"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "BLE",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Request Scan", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1, "enum": "yesno"}] },
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 7}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Temperature",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Temperature MCU(°C)", "access": ["Response"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Temperature",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":2}
+		],
+		"description": [
+			{"parameter": "Temperature (°C)", "access": ["Message"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Direct Data",
+		"infor": [
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "AT CMD", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Test Mode",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Test Mode", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "onoff"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Mqtt Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":3},
+			{"mode": "Response", "length":3}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Mqtt Server", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "mqtt server"}] },
+			{"parameter": "Username", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] },
+			{"parameter": "Password", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Subscribed Topic ", "access": ["Message"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Reset",
+		"infor": [
+			{"mode": "Request", "length":1}
+		],
+		"description": [
+			{"parameter": "Delay Time(min)", "access": ["Request", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Change Connect",
+		"infor": [
+			{"mode": "Message", "length":2}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Mqtt Server", "access": ["Message"], "attribute": [{"type": "U", "size": 1, "enum": "mqtt server"}] },
+			{"parameter": "Username", "access": ["Message"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Operator Status",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Response", "length":2},
+			{"mode": "Message", "length":2}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Name Format", "access": ["Response", "Message"], "attribute": [{"type": "U", "size": 1, "enum": "lteop name format"}] },
+			{"parameter": "Operator Name", "access": ["Response", "Message"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Mqtt KeepAlive Interval",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":2},
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Keep Alive Interval (s)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "SSL Key URL",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Link", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Mqtt SSL",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":2},
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Profile Id", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}]},
+			{"parameter": "Enable", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "SSL Key URL",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":3},
+			{"mode": "Response", "length":3}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Profile Id", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Lenght", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 4}]},
+			{"parameter": "Key Name", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] },
+			{"parameter": "Link", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Set Endpoint",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":2},
+			{"mode": "Response", "length":2}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Profile Id", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Enpoint", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Active Profile",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Profile Id", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1}] }
+		]
+	},
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Read Profile",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Response", "length":4}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Profile ID", "access": ["Read", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Endpoint", "access": ["Response"], "attribute": [{"type": "C", "size": 1}] },
+			{"parameter": "SSL Enable", "access": ["Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Key Name", "access": ["Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "Read All Profiles",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Response", "length":2}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Profile ID", "access": ["Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Endpoint", "access": ["Response"], "attribute": [{"type": "C", "size": 1}] },
+			{"parameter": "SSL Enable", "access": ["Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Key Name", "access": ["Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "LTE Module Version",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Response", "length":1}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Version", "access": ["Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "DFOTA",
+		"infor": [
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "url", "access": ["Write", "Response"], "attribute": [{"type": "C", "size": 1}] }
+		]
+	  }
+	  ,
+	  {
+		"app": "GENERAL",
+		"device": "LTE",
+		"cmd": "DFOTA Result",
+		"infor": [
+			{"mode": "Message", "length":4}
+		],
+		"option": ["text"],
+		"description": [
+			{"parameter": "Error code", "access": ["Message"], "attribute": [{"type": "U", "size": 4}] }
+		]
+	  }
+	,
+	{
+		"app": "GENERAL",
+		"device": "Schedule",
+		"cmd": "Delete Activity",
+		"infor": [
+			{"mode": "Request", "length":0}
+		],
+		"description": [
+
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Schedule",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Reading Status", "access": ["Response"], "attribute": [{"type": "U", "size": 1, "enum": "array status"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Schedule",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":6},
+			{"mode": "Response", "length":6}
+		],
+		"option": ["array"],
+		"description": [
+			{"parameter": "Schedules", "access": ["Write", "Response"], "format": "{\"Type\": \"%s\", \"%s\": \"%02d:%02d:%02d\", \"Action\": \"%s\"}", "attribute": [{"type": "U", "size": 1, "enum": "frequency"}, {"type": "U", "size": 1, "enum": "day of week"}, {"type": "U", "size": 1, "range": [0,23]}, {"type": "U", "size": 1, "range": [0,59]}, {"type": "U", "size": 1, "range": [0,59]}, {"type": "U", "size": 1, "enum": "action"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "MagSensor",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Send Door Status", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1, "enum": "onoff"}] },
+			{"parameter": "Alert Door Status", "access": ["Write", "Response"], "attribute": [{"type": "b", "size": 1, "enum": "onoff"}] },
+			{"parameter": "Reserve", "access": ["Write", "Response"], "option": ["ignore"], "attribute": [{"type": "b", "size": 6}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "MagSensor",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":1}
+		],
+		"description": [
+			{"parameter": "Door Status", "access": ["Message"], "attribute": [{"type": "U", "size": 1, "enum": "openclose"}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "FlowSensor",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":16},
+			{"mode": "Response", "length":16}
+		],
+		"description": [
+			{"parameter": "Calculation Period 1 (minute)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Alarm Threshold 1 (pulse/hour)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Leak Threshold 1 (pulse/hour)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Daily Number Under Leak Threshold 1", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Calculation Period 2 (minute)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Alarm Threshold 2 (pulse/hour)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Leak Threshold 2 (pulse/hour)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Daily Number Under Leak Threshold 2", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "FlowSensor",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":16}
+		],
+		"description": [
+			{"parameter": "Pulse 1", "access": ["Message"], "attribute": [{"type": "b", "size": 40}] },
+			{"parameter": "Flow Rate 1 (pulse/hour)", "access": ["Message"], "attribute": [{"type": "b", "size": 24}] },
+			{"parameter": "Pulse 2", "access": ["Message"], "attribute": [{"type": "b", "size": 40}] },
+			{"parameter": "Flow Rate 2 (pulse/hour)", "access": ["Message"], "attribute": [{"type": "b", "size": 24}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "BLE-Mesh",
+		"cmd": "Data",
+		"infor": [
+			{"mode": "Message", "length":6}
+		],
+		"description": [
+			{"parameter": "Peer Address", "access": ["Message"], "format": "0x%04X", "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "IMEI", "access": ["Message"], "format": "0x%08X", "attribute": [{"type": "U", "size": 4}] }
+		]
+	  }
+	,
+	{
+		"app": "GENERAL",
+		"device": "Serial",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":2},
+			{"mode": "Response", "length":2}
+		],
+		"description": [
+			{"parameter": "Timeout Connection (s)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "GENERAL",
+		"device": "Button",
+		"cmd": "Setting",
+		"infor": [
+			{"mode": "Read", "length":1},
+			{"mode": "Write", "length":7},
+			{"mode": "Response", "length":7}
+		],
+		"description": [
+			{"parameter": "Button ID", "access": ["Read", "Write", "Response"], "attribute": [{"type": "U", "size": 1}] },
+			{"parameter": "Duration of Click action (ms)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Duration of Press action (ms)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] },
+			{"parameter": "Duration of Time out after last action (ms)", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 2}] }
+		]
+	}
+	,
+	{
+		"app": "DQS",
+		"device": "Light",
+		"cmd": "Dimmer",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Percent", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "range": [0,100]}] }
+		]
+	}
+	,
+	{
+		"app": "DQS",
+		"device": "Light",
+		"cmd": "Turning",
+		"infor": [
+			{"mode": "Read", "length":0},
+			{"mode": "Write", "length":1},
+			{"mode": "Response", "length":1}
+		],
+		"description": [
+			{"parameter": "Turn", "access": ["Write", "Response"], "attribute": [{"type": "U", "size": 1, "enum": "onoff"}] }
+		]
+	}
+]

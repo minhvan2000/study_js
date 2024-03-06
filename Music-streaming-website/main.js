@@ -57,17 +57,17 @@ const app = {
             image: 'https://avatar-ex-swe.nixcdn.com/song/2022/12/26/d/1/7/8/1672030370466_500.jpg',
         },
         {
-            name: 'Ganh-Ti',
+            name: 'Ganh Tị',
             singer: 'Tage',
             path: './music/GanhTi-Tage-6942215.mp3',
             image: 'https://avatar-ex-swe.nixcdn.com/song/2021/02/15/3/4/6/3/1613370316907_500.jpg',
         },
-        // {
-        //     name: 'Naachne Ka Shaunq',
-        //     singer: 'Raftaar x Brobha V',
-        //     path: 'https://mp3.filmysongs.in/download.php?id=Naachne Ka Shaunq Raftaar Ft Brodha V Mp3 Hindi Song Filmysongs.co.mp3',
-        //     image: 'https://i.ytimg.com/vi/QvswgfLDuPg/maxresdefault.jpg',
-        // },
+        {
+            name: 'Để Ai Cần',
+            singer: 'Bray ft Young H',
+            path: './music/De-Ai-Can.mp3',
+            image: 'https://i.ytimg.com/vi/tNDJcOGvCeQ/maxresdefault.jpg',
+        },
         // {
         //     name: 'Mantoiyat',
         //     singer: 'Raftaar x Nawazuddin Siddiqui',
